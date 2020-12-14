@@ -1,0 +1,289 @@
+:root {
+  --ff-sans: "IBM Plex Sans", sans-serif;
+  --ff-serif: "IBM Plex Serif", serif;
+
+  /* small screen font-sizes */
+  --fs-200: 0.75rem;
+  --fs-300: 1rem;
+  --fs-400: 1.25rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.75rem;
+  --fs-900: 2.125rem;
+
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+
+  --clr-neutral-100: #fff;
+  --clr-neutral-200: #eef1f6;
+  --clr-neutral-300: #a9afbc;
+  --clr-neutral-400: #737b8c;
+  --clr-neutral-500: #434956;
+  --clr-neutral-900: #020203;
+
+  --clr-primary-300: #f3f7ff;
+  --clr-primary-400: #8ea8da;
+
+  --spacer: 1rem;
+}
+
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h2 {
+  color: var(--clr-neutral-400);
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--spacer);
+}
+
+/* Utility classes */
+.flow-content > * + * {
+  margin-top: var(--flow-space, var(--spacer));
+}
+
+section {
+  --pad-section: 1rem;
+}
+
+@media (min-width: 40em) {
+  section {
+    --pad-section: 2rem;
+  }
+}
+
+.container {
+  padding: var(--pad-section, 0) var(--pad-section, calc(var(--spacer) * 2));
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.split > * + * {
+  margin: calc(var(--spacer) * 3) 0 0 0;
+}
+
+.split--nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.split--nav > * + * {
+  margin: 0 0 0 var(--flex-space, var(--spacer));
+}
+
+@media (min-width: 40em) {
+  .split {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .split > * {
+    flex-basis: 100%;
+  }
+
+  .split > * + * {
+    margin: 0 0 0 var(--flex-space, var(--spacer));
+  }
+
+  .col25 {
+    flex-basis: 25%;
+  }
+
+  .col40 {
+    flex-basis: 40%;
+  }
+
+  .col50 {
+    flex-basis: 50%;
+  }
+ 
+  .col60 {
+    flex-basis: 60%;
+  }
+
+  .col75 {
+    flex-basis: 75%;
+  }
+
+  .col100 {
+    flex-basis: 100%;
+  }
+}
+
+
+/* General Styling */
+body {
+  font-family: var(--ff-serif);
+  font-weight: var(--fw-200);
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-900);
+  line-height: 1.6;
+}
+
+body > * {
+  --flow-space: 2rem;
+  margin: var(--spacer);
+  border-radius: var(--spacer);
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: var(--fw-700);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--fw-700);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--fs-900);
+}
+h2 {
+  font-size: var(--fs-600);
+}
+h3 {
+  font-size: var(--fs-500);
+}
+
+h4 {
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-400);
+}
+
+.container h2 + p {
+  margin-top: 0;
+}
+
+ul[class] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Specific Sections */
+header {
+  height:  30rem;
+  padding: 2rem;
+  align-items: flex-start;
+  background: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.top-nav {
+  visibility: hidden;
+}
+
+@media (min-width: 40em) {
+  .top-nav {
+    visibility: visible;
+  }
+}
+
+.section-one a {
+  display: inline-block;
+}
+
+.section-three {
+  --flex-space: 2rem;
+  background: var(--clr-primary-300);
+}
+
+.section-three span {
+  display: block;
+}
+
+.section-three a {
+  display: block;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.section-three a:hover {
+  opacity: .7;
+}
+
+.card {
+  --flow-space: .5rem;
+}
+
+time {
+  font-size: var(--fs-200);
+  color: var(--clr-neutral-400);
+}
+
+time + time {
+  margin-left: 2.5rem;
+}
+
+.section-four {
+  --flow-space: .75rem;
+}
+
+footer {
+  text-align: center;
+}
+
+@media (min-width: 40em) {
+footer > div.split {
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+}
+
+.bottom-nav {
+  background: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}
+
+@media (min-width: 40em) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.mobile-nav--item {
+  padding: 1em;
+  margin: 0 auto;
+}
+
