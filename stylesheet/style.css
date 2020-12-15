@@ -27,6 +27,8 @@
   --clr-primary-300: #f3f7ff;
   --clr-primary-400: #8ea8da;
 
+  --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+
   --spacer: 1rem;
 }
 
@@ -50,6 +52,7 @@ h2 {
 }
 
 img {
+  width: auto;
   max-width: 100%;
   border-radius: var(--spacer);
 }
@@ -137,6 +140,22 @@ section {
 
 .card {
   --flow-space: .5rem;
+  padding: 1.5rem;
+  transition: 400ms;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.top-nav {
+  visibility: hidden;
+}
+
+@media (min-width: 40em) {
+  .top-nav {
+    visibility: visible;
+  }
 }
 
 /* General Styling */
@@ -185,7 +204,7 @@ h4 {
   color: var(--clr-neutral-400);
 }
 
-.container h2 + p {
+.container h2 + * {
   margin-top: 0;
 }
 
@@ -198,22 +217,7 @@ header {
   height:  30rem;
   padding: 2rem;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-}
-
-.top-nav {
-  visibility: hidden;
-}
-
-@media (min-width: 40em) {
-  .top-nav {
-    visibility: visible;
-  }
-}
-
-.container a {
-  display: inline-block;
 }
 
 time {
@@ -223,6 +227,34 @@ time {
 
 time + time {
   margin-left: 2.5rem;
+}
+
+hr {
+  color: var(--clr-neutral-200);
+  opacity: .5;
+}
+
+footer {
+  text-align: center;
+}
+
+@media (min-width: 40em) {
+footer > div.split {
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+}
+
+.container a {
+  display: inline-block;
+}
+
+.card:hover {
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  border-radius: var(--spacer);
+  transition: ease-in-out 400ms;
 }
 
 .bottom-nav {
@@ -248,42 +280,45 @@ time + time {
   margin: 0 auto;
 }
 
-footer {
-  text-align: center;
-}
-
-@media (min-width: 40em) {
-footer > div.split {
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  align-items: center;
-}
-}
-
-/* Specific Sections */
-.header--home {
-  background-image: url(../img/hero.jpg);
-}
-
-.blog-gallery {
+.preview {
   --flex-space: 2rem;
-  background: var(--clr-primary-300);
 }
 
-.blog-gallery span {
+.preview span {
   display: block;
-}
-
-.blog-gallery a {
-  display: block;
-  text-decoration: none;
-  opacity: 1;
-}
-
-.blog-gallery a:hover {
-  opacity: .7;
 }
 
 .sitemap {
   --flow-space: .75rem;
+}
+
+/* SPECIFIC SECTIONS */
+
+/* Home Page */
+.header--home {
+  background-image: url(../img/hero.jpg);
+  background-position: center;
+}
+
+.preview--blog {
+  background: var(--clr-primary-300);
+}
+
+/* Blog Page */
+.header--blog {
+  background-image: url(../img/blog.jpg);
+  background-position: right;
+}
+
+/* Story Page */
+
+.header--story {
+  background-image: url(../img/article.jpg);
+  background-position: right;
+}
+
+.preview--story--grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
