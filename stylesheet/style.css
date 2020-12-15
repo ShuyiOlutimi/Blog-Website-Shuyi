@@ -135,6 +135,9 @@ section {
   }
 }
 
+.card {
+  --flow-space: .5rem;
+}
 
 /* General Styling */
 body {
@@ -191,12 +194,9 @@ ul[class] {
   padding: 0;
 }
 
-/* Specific Sections */
 header {
   height:  30rem;
   padding: 2rem;
-  align-items: flex-start;
-  background: url(../img/hero.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -212,31 +212,8 @@ header {
   }
 }
 
-.section-one a {
+.container a {
   display: inline-block;
-}
-
-.section-three {
-  --flex-space: 2rem;
-  background: var(--clr-primary-300);
-}
-
-.section-three span {
-  display: block;
-}
-
-.section-three a {
-  display: block;
-  text-decoration: none;
-  opacity: 1;
-}
-
-.section-three a:hover {
-  opacity: .7;
-}
-
-.card {
-  --flow-space: .5rem;
 }
 
 time {
@@ -246,22 +223,6 @@ time {
 
 time + time {
   margin-left: 2.5rem;
-}
-
-.section-four {
-  --flow-space: .75rem;
-}
-
-footer {
-  text-align: center;
-}
-
-@media (min-width: 40em) {
-footer > div.split {
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  align-items: center;
-}
 }
 
 .bottom-nav {
@@ -287,3 +248,42 @@ footer > div.split {
   margin: 0 auto;
 }
 
+footer {
+  text-align: center;
+}
+
+@media (min-width: 40em) {
+footer > div.split {
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+}
+
+/* Specific Sections */
+.header--home {
+  background-image: url(../img/hero.jpg);
+}
+
+.blog-gallery {
+  --flex-space: 2rem;
+  background: var(--clr-primary-300);
+}
+
+.blog-gallery span {
+  display: block;
+}
+
+.blog-gallery a {
+  display: block;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.blog-gallery a:hover {
+  opacity: .7;
+}
+
+.sitemap {
+  --flow-space: .75rem;
+}
