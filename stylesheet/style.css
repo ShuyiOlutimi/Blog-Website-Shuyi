@@ -10,6 +10,7 @@
   --fs-600: 1.75rem;
   --fs-900: 2.125rem;
 
+  --fw-100: 100;
   --fw-200: 200;
   --fw-300: 300;
   --fw-400: 400;
@@ -103,10 +104,12 @@ section {
   .split {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .split > * {
-    flex-basis: 100%;
+    flex-basis: 20rem;
+    flex-grow: 1;
   }
 
   .split > * + * {
@@ -161,7 +164,7 @@ section {
 /* General Styling */
 body {
   font-family: var(--ff-serif);
-  font-weight: var(--fw-200);
+  font-weight: var(--fw-100);
   font-size: var(--fs-400);
   color: var(--clr-neutral-900);
   line-height: 1.6;
@@ -178,8 +181,12 @@ body > * {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--clr-neutral-900);
   font-weight: var(--fw-700);
+}
+
+a:hover {
+  color: var(--clr-neutral-500);
 }
 
 h1,
