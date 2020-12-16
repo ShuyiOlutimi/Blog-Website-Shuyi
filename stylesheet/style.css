@@ -44,7 +44,8 @@ body,
 h1,
 h2,
 h3,
-p {
+p,
+button {
   margin: 0;
 }
 
@@ -294,14 +295,22 @@ footer > div.split {
 button {
   display: inline-block;
   border: none;
-  padding-left: none;
+  padding: 1rem;
   background: none;
   font-family: inherit;
   font-size: var(--fs-400);
   font-weight: var(--fw-700);
+  box-shadow: var(--shadow);
+  border-radius: var(--spacer);
+  transition: ease-in-out 400ms;
 }
 
-
+button:hover {
+  padding: .8rem;
+  cursor: pointer;
+  background: var(--clr-neutral-200);
+  transition: ease-in-out 400ms;
+}
 
 .card:hover {
   padding: 1rem;
